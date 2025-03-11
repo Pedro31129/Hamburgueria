@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <h1>Cique quando estiver vermelho</h1>
+    <img id="desligada" src="desligado.png">
+    <button id="iniciar" onclick="play()">Iniciar</button>
+    <button id="clique" disabled>Aperte aqui</button>
+    <h1>Tempo:<span id="span"></span></h1>
+    <script>
+        var clique = document.getElementById("clique")
+        var desligada = document.getElementById("desligada")
+        var contador = 0
+        var span = document.getElementById("span")
+        function play() {
+    var iniciar = document.getElementById("iniciar")
+    iniciar.remove()
+     setTimeout(() => {
+        desligada.src = "vermelho.png"
+     }, 3000);
+     var intervalo = setInterval(() => {
+        var agora = new Date()
+        contador++
+        if(contador >= 3) {
+            clique.disabled = false
+    clique.onclick = function() {
+var fim = new Date()
+span.innerHTML = fim - agora + " " + "ms"
+    }
+
+    clearInterval(intervalo)
+}
+     }, 1000);
+        }
+
+    </script>
+
+    <script>
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url("bg.png") no-repeat;
+            background-size: 100%;
+            background-position: top center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .hamb1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .hamb2 {
+            height: 200px;
+            border-radius: 50px;
+            margin-top: 50px;
+        }
+
+        .texto1, .texto2, #texto3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .texto1 {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .texto2 {
+            font-size: 16px;
+            margin-top: -5px;
+        }
+
+        #texto3 {
+            padding: 10px;
+            background-color: green;
+            border-radius: 100px;
+            width: auto;
+            max-width: 90%;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .botaocompras {
+        position: fixed;
+        right: 10px;
+        bottom: 450px;
+        font-size: 24px;
+    }
+            .cardapio {
+        margin-top: -5px !important;
+        font-size: 20px;
+    }
+    .refrititulo {
+        margin-left: 350px !important;
+}
+
+            .hamb2 {
+                height: 50px;
+            }
+
+            .texto1 {
+                font-size: 12px;
+            }
+
+            .texto2 {
+                font-size: 12px;
+            }
+
+            #texto3 {
+                margin-top: -5px;
+                font-size: 12px;
+            }
+        }
+        .cardapio {
+            margin-top: 150px;
+        }
+        .burguerum {
+            height: 100px;
+            margin-left: -380px;
+            border-radius: 10px;
+        }
+        .carrinho {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 90px;
+        }
+@keyframes animacao {
+    0%{
+  opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.hamburguertitulo {
+    margin-top: -80px;
+    margin-left: -90px;
+
+}
+.roxo {
+    color: purple;
+    font-size: 24px;
+}
+.botao {
+    margin-left: -160px;
+    margin-top: -20px;
+    background-color: black;
+    border: none;
+    border-radius: 30px;
+    color: cyan;
+    cursor: pointer;
+}
+.refri {
+    height: 100px;
+    margin-left: 140px;
+    margin-top: -95px;
+}
+.refrititulo {
+margin-left: 400px;
+margin-top: -80px;
+}
+.decoracao {
+    font-size: 19px;
+    color: green;
+}
+.refriproduto {
+    background-color: black;
+    border: none;
+    border-radius: 30px;
+    color: cyan;
+    margin-left: 300px;
+    margin-top: -20px;
+    cursor: pointer;
+}
+.botaocompras {
+    margin-left: 1460px;
+    margin-top: -500px;
+    background-color: green;
+    border-radius: 30px;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    animation: 2s ease;
+    margin-bottom: 140px;
+}
+.botaocompras:hover {
+    transform: scale(1.2);
+}
+
+.mensagem-carrinho {
+    padding: 10px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+}
+.pagina {
+    background: linear-gradient(to right,white,yellow,brown);
+        height: 500px;
+        width: 500px;
+        margin-top: 30px;
+        z-index: 2;
+        position: absolute;
+}
+.x {
+    margin-top: 20px;
+margin-left: 450px;
+font-size: 30px;
+border: none;
+cursor: pointer;
+animation: "1s ease";
+color: white;
+background-color: black;
+}
+.x:hover {
+    background-color: red;
+    transform: scale(1.2);
+}
+.imagemjsburguer {
+height: 100px;
+z-index: 2;
+margin-left: 100px;
+margin-top: -100px;
+border-radius: 50px;
+}
+.textocomhambu {
+    margin-top: -20px;
+    margin-left: 200px;
+    font-size: 20px;
+    z-index: 2;
+}
+.preçohamburguer {
+    color: red;
+    font-size: 30px;
+    margin-left: 220px;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: cyan;
+    border-radius: 30px;
+    display: inline-block;
+    z-index: 2;
+}
+.imagemrefri {
+height: 100px;
+margin-left: 100px;
+}
+.textocomrefri {
+    font-size: 20px;
+    margin-left: 190px;
+    margin-top: -30px;
+}
+.preçorefri {
+    background-color: cyan;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 30px;
+    color: red;
+    z-index: 2;
+    position: absolute;
+    padding: 10px;
+}
+.resultado {
+    color: purple;
+    font-style: italic;
+    z-index: -1;
+    margin-left: 130px;
+}
+    </style>
+</head>
+<body>
+    <div class="hamb1">
+        <img class="hamb2" src="hamb-1.png">
+    </div>
+    <h1 class="texto1">Hamburgueria</h1>
+    <h3 class="texto2">Rua da Liberdade Econômica, 133, Florianópolis</h3>
+    <div>
+        <h1 id="texto3">Seg. a dom. - 18:30h às 22h</h1>
+    </div>
+    <h1 class="cardapio">Conheça nosso cardápio!</h1>
+    <img class="burguerum" src="hamb-1.png">
+    <h4 class="hamburguertitulo">  <span class="roxo">Burguer cremoso:</span><br> Um saboroso hamburguer<br> com batatas fritas</h4>
+    <button class="botao" onclick="hamburguer()" id="carrinhodois">CARRINHO 🛒</button>
+    <img class="refri" src="refri-2.png">
+    <h5 class="refrititulo"><span class="decoracao">Refri antarctica (350 ml):</span><br>Para acompanhar<br> com hamburguer</h5>
+    <button class="refriproduto" onclick="refri()">CARRINHO 🛒</button>
+    <button id="comprasbotao" onclick="compras()" class="botaocompras">🛒</button>
+    <script>
+        var comprasbotao = document.getElementById("comprasbotao")
+        var quantidadeshamburguer = 0
+        var quantidadesrefri = 0
+        var borda = document.getElementById("texto3")
+        var dinheiro = 0
+        var horas = new Date().getHours()
+        var minutos = new Date().getMinutes()
+        var horaagora = horas * 60 + minutos
+        var aberto = 18 * 60 + 30
+        var fechado = 22 * 60
+        var hamburguercomprado = false
+        var bebidacomprada = false
+        if(horaagora > fechado || horaagora < aberto ) {
+    borda.style.backgroundColor = "red"
+        }
+        else {
+            borda.style.backgroundColor = "green"
+        }
+    function hamburguer() {
+        quantidadeshamburguer += 1
+        var mensagem = document.createElement("h1")
+        mensagem.innerHTML = "Item adicionado ao carrinho!"
+        document.body.appendChild(mensagem)
+        mensagem.classList.add("carrinho")
+        mensagem.style.animation = "animacao 3s ease"
+        dinheiro += 37
+        console.log(dinheiro)
+        hamburguercomprado = true
+        setTimeout(() => {
+            mensagem.remove()
+        }, 3000);
+    }
+    function refri() {
+        quantidadesrefri += 1
+        var mensagem = document.createElement("h1")
+        mensagem.innerHTML = "Item adicionado ao carrinho!"
+        document.body.appendChild(mensagem)
+        mensagem.classList.add("mensagem-carrinho")
+        mensagem.style.animation = "animacao 3s ease"
+        dinheiro += 6
+        console.log(dinheiro)
+        bebidacomprada = true
+        setTimeout(() => {
+            mensagem.remove()
+        }, 3000);
+    }
+    function compras() {
+        var paginacriada = document.createElement("div")
+        paginacriada.classList.add("pagina")
+        document.body.appendChild(paginacriada)
+        var botaodesair = document.createElement("button")
+        paginacriada.appendChild(botaodesair)
+        botaodesair.innerHTML = "X"
+        botaodesair.classList.add("x")
+        comprasbotao.disabled = true
+        var resultadocompra = document.createElement("h1")
+        resultadocompra.innerHTML = "Total a pagar: " + "R$" + " " + dinheiro
+        paginacriada.appendChild(resultadocompra)
+        resultadocompra.classList.add("resultado")
+        if(hamburguercomprado) {
+            var preçohamburguer = document.createElement("h1")
+            paginacriada.appendChild(preçohamburguer)
+            preçohamburguer.innerHTML = "R$: 37"
+            preçohamburguer.classList.add("preçohamburguer")
+            var imagemhamburguer = document.createElement("img")
+            imagemhamburguer.src = "hamb-1.png"
+            imagemhamburguer.classList.add("imagemjsburguer")
+            paginacriada.appendChild(imagemhamburguer)
+            var textocomhamburguer = document.createElement("h1")
+            textocomhamburguer.innerHTML = "Quantidades:" + " " + quantidadeshamburguer
+            paginacriada.appendChild(textocomhamburguer)
+            textocomhamburguer.classList.add("textocomhambu")
+        }
+        if(bebidacomprada) {
+            var imagemrefri = document.createElement("img")
+            paginacriada.appendChild(imagemrefri)
+            imagemrefri.src = "refri-2.png"
+            imagemrefri.classList.add("imagemrefri")
+            var preçorefri = document.createElement("h1")
+            paginacriada.appendChild(preçorefri)
+            preçorefri.innerHTML = "R$: 6"
+            preçorefri.classList.add("preçorefri")
+            var textocomrefri = document.createElement("h1")
+            textocomrefri.innerHTML = "Quantidades:" + " " + quantidadesrefri
+            paginacriada.appendChild(textocomrefri)
+            textocomrefri.classList.add("textocomrefri")
+
+        }
+        botaodesair.onclick =  function() {
+    paginacriada.remove()
+    botaodesair.remove()
+    comprasbotao.disabled = false
+        }
+    }
+    </script>
+</body>
+</html>
